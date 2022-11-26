@@ -1,49 +1,67 @@
+# lernpfad/models.py
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth import get_user_model
+from django.utils import timezone
 
-# Create your models here.
 
-class Patient(models.Model):
-    user_id = models.CharField(max_length=6, default='') #ID des Patienten, z.B. Patientennummer
-    vorname = models.CharField(max_length=200) #Zeichenfeld für Vornamen, maximal 200 Zeichen
-    nachname = models.CharField(max_length=200) 
-    geburtsdatum = models.DateField(auto_now=True, editable=False, blank=True)
-    email = models.EmailField(max_length=254, blank=True)
-    lernpfad_abgeschlossen = models.BooleanField(default=False) #Zustand trifft entweder zu oder nicht
-    eigenständigkeitserklärung = models.BooleanField(default=False)
-    def __str__(self):
-        #in Admin-Oberfläche wird Nachname, Vorname und Status der Bearbeitung angezeigt
-        return self.nachname + ', ' + self.vorname + ' | ' + str(self.lernpfad_abgeschlossen) #https://docs.djangoproject.com/en/4.0/ref/models/fields/#filefield
-    fragen = models.TextField(max_length=1000, blank=True, default='')
-    feedback = models.TextField(max_length=1000, blank=True, default='')
-    class Meta:
-            verbose_name_plural = "patienten" #Korrigiert den Standard-Plural, in dem einfach ein s an Singularformen gehängt wird
-    
-class Modul(models.Model):
-    name = models.CharField(max_length=30)
-    nummer = models.IntegerField(default=0)
-    class Meta:
-            verbose_name_plural = "module"
-    def __str__(self):
-        return str(self.nummer) + ' | ' + self.name #In Admin-Oberfläche wird Name des Moduls angezeigt
+class AccountManager(BaseUserManager):
+    use_in_migrations = True
+
+    def _create_user(self, email, name, phone, password, **extra_fields):
+        values = [email, name, phone]
+        field_value_map = dict(zip(self.model.REQUIRED_FIELDS, values))
+        for field_name, value in field_value_map.items():
+            if not value:
+                raise ValueError('The {} value must be set'.format(field_name))
+
+        email = self.normalize_email(email)
+        user = self.model(
+            email=email,
+            name=name,
+            phone=phone,
+            **extra_fields
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_user(self, email, name, phone, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', False)
+        extra_fields.setdefault('is_superuser', False)
+        return self._create_user(email, name, phone, password, **extra_fields)
+
+    def create_superuser(self, email, name, phone, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff=True.')
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser must have is_superuser=True.')
+
+        return self._create_user(email, name, phone, password, **extra_fields)
+
+
+class Account(AbstractBaseUser, PermissionsMixin):
+    email = models.EmailField(unique=True)
+    name = models.CharField(max_length=150)
+    phone = models.CharField(max_length=50)
+    date_of_birth = models.DateField(blank=True, null=True)
+    picture = models.ImageField(blank=True, null=True)
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    date_joined = models.DateTimeField(default=timezone.now)
+    last_login = models.DateTimeField(null=True)
+
+    objects = AccountManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['name', 'phone']
+
+    def get_full_name(self):
+        return self.name
+
+    def get_short_name(self):
+        return self.name.split()[0]
         
-class Frage(models.Model):
-    frage_id = models.IntegerField(default=0)
-    frage_titel = models.CharField(max_length=200, default='')
-    frage_satz = models.TextField(max_length=200)
-    frage_modul = models.ForeignKey(Modul, on_delete=models.CASCADE) #Greift auf vorhandene Module zu
-    erklaerung = models.TextField(max_length=1000, blank=True, default='')
-    class Meta:
-            verbose_name_plural = "fragen"
-    def __str__(self):
-        return str(self.frage_modul) + ' | ' + self.frage_titel #In Admin-Oberfläche wird Fragetitel und ID der Frage gezeigt
-
-class Antwort(models.Model):
-    antwort_id = models.IntegerField(default=0)
-    frage = models.ForeignKey(Frage, on_delete=models.CASCADE) #Greift auf vorhandene Fragen zu
-    antwort_text = models.TextField(max_length=200)
-    richtige_loesung = models.BooleanField(default=False)
-    class Meta:
-            verbose_name_plural = "antworten"
-    def __str__(self):
-        return str(self.frage) + ' - ' + str(self.antwort_text) #In Admin-Oberfläche wird Fragetitel und ID der Antwort gezeigt
-    
