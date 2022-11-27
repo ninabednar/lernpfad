@@ -52,8 +52,8 @@ class QuizAnswer(models.Model):
         
 class Account(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
-    #Name in Vor- und Nachname splitten
-    name = models.CharField(max_length=150)
+    nachname = models.CharField(max_length=150)
+    vorname = models.CharField(max_length=150)
     phone = models.CharField(max_length=50, blank= True, default=0)
     date_of_birth = models.DateField(blank=True, null=True)
     picture = models.ImageField(blank=True, null=True)
@@ -77,12 +77,12 @@ class Account(AbstractBaseUser, PermissionsMixin):
     objects = AccountManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name', 'phone']
+    REQUIRED_FIELDS = ['date_of_birth', 'nachname', 'vorname']
 
     def get_full_name(self):
         return self.name
 
-    def get_short_name(self):
-        return self.name.split()[0]
+    #def get_short_name(self):
+    #    return self.name.split()[0]
         
 

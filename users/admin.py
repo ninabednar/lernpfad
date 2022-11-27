@@ -10,23 +10,23 @@ class AccountAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('email', 'name', 'phone', 'date_of_birth', 'is_staff',  'is_superuser', 'get_quiz_answers')
+    list_display = ('email', 'nachname', 'vorname', 'phone', 'date_of_birth', 'is_staff',  'is_superuser', 'get_quiz_answers')
     list_filter = ('is_superuser',)
 
     fieldsets = (
-        (None, {'fields': ('email', 'is_staff', 'is_superuser', 'password', 'get_quiz_answers')}),
-        ('Personal info', {'fields': ('name', 'phone', 'date_of_birth', 'picture')}),
+        ('Info', {'fields': ('nachname', 'vorname', 'date_of_birth', 'get_quiz_answers', 'picture')}),
+        (None, {'fields': ('email', 'password')}),
         ('Groups', {'fields': ('groups',)}),
-        ('Permissions', {'fields': ('user_permissions',)}),
+        
     )
     add_fieldsets = (
         (None, {'fields': ('email', 'is_staff', 'is_superuser', 'password1', 'password2')}),
-        ('Personal info', {'fields': ('name', 'phone', 'date_of_birth', 'picture')}),
+        ('Personal info', {'fields': ('nachname', 'vorname', 'phone', 'date_of_birth', 'picture')}),
         ('Groups', {'fields': ('groups',)}),
         ('Permissions', {'fields': ('user_permissions',)}),
     )
 
-    search_fields = ('email', 'name', 'phone')
+    search_fields = ('email', 'nachname', 'phone')
     ordering = ('email',)
     filter_horizontal = ()
     
