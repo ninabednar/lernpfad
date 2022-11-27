@@ -3,7 +3,9 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.contrib.auth import get_user_model
 from django.utils import timezone
-
+from django.contrib import admin
+from module import models as module_models
+from django.utils.html import format_html
 
 class AccountManager(BaseUserManager):
     use_in_migrations = True
@@ -42,17 +44,35 @@ class AccountManager(BaseUserManager):
 
         return self._create_user(email, name, phone, password, **extra_fields)
 
-
+class QuizAnswer(models.Model):
+    answer_option = models.ForeignKey(module_models.Antwort, on_delete=models.CASCADE)
+    user = models.ForeignKey('Account', on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.answer_option.frage) + ' - ' + str(self.answer_option.antwort_text)
+        
 class Account(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
+    #Name in Vor- und Nachname splitten
     name = models.CharField(max_length=150)
-    phone = models.CharField(max_length=50)
+    phone = models.CharField(max_length=50, blank= True, default=0)
     date_of_birth = models.DateField(blank=True, null=True)
     picture = models.ImageField(blank=True, null=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
     last_login = models.DateTimeField(null=True)
+    
+    @admin.display
+    def get_quiz_answers(self):
+        my_answers = QuizAnswer.objects.filter(user=self)
+        answers = ''
+        for answer in my_answers:
+            answers += str(answer) + '\n'
+        return answers
+    #get_quiz_answers.boolean = True
+    get_quiz_answers.short_description = 'quizanswers'
+    #quiz_answer = models.ForeignKey('QuizAnswer', on_delete=models.CASCADE, blank=True, null=True)
+    
 
     objects = AccountManager()
 
@@ -65,3 +85,4 @@ class Account(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         return self.name.split()[0]
         
+
