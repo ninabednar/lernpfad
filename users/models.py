@@ -8,6 +8,7 @@ from module import models as module_models
 from django.utils.html import format_html
 
 class AccountManager(BaseUserManager):
+    #https://dev.to/joshwizzy/customizing-django-authentication-using-abstractbaseuser-llg
     use_in_migrations = True
 
     def _create_user(self, email, name, phone, password, **extra_fields):
@@ -45,10 +46,12 @@ class AccountManager(BaseUserManager):
         return self._create_user(email, name, phone, password, **extra_fields)
 
 class QuizAnswer(models.Model):
+    #https://stackoverflow.com/questions/50501420/how-do-i-save-user-specific-quiz-answers-in-django-models
     answer_option = models.ForeignKey(module_models.Antwort, on_delete=models.CASCADE)
     user = models.ForeignKey('Account', on_delete=models.CASCADE)
     def __str__(self):
         return str(self.answer_option.frage) + ' - ' + str(self.answer_option.antwort_text)
+        
         
 class Account(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)

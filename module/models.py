@@ -13,7 +13,7 @@ class Frage(models.Model):
     frage_id = models.IntegerField(default=0)
     frage_titel = models.CharField(max_length=200, default='')
     frage_satz = models.TextField(max_length=200)
-    frage_modul = models.ForeignKey(Modul, on_delete=models.CASCADE) #Greift auf vorhandene Module zu
+    frage_modul = models.ForeignKey(Modul, on_delete=models.CASCADE)
     erklaerung = models.TextField(max_length=1000, blank=True, default='')
     class Meta:
             verbose_name_plural = "fragen"
