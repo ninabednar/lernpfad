@@ -46,12 +46,20 @@ class AccountManager(BaseUserManager):
 
         return self._create_user
 
-class QuizAnswer(models.Model):
-    #https://stackoverflow.com/questions/50501420/how-do-i-save-user-specific-quiz-answers-in-django-models
+class QuizAnswer(models.Model): #https://stackoverflow.com/questions/50501420/how-do-i-save-user-specific-quiz-answers-in-django-models
     answer_option = models.ForeignKey(module_models.Antwort, on_delete=models.CASCADE)
     user = models.ForeignKey('Account', on_delete=models.CASCADE)
     def __str__(self):
         return str(self.answer_option.frage) + ' - ' + str(self.answer_option.antwort_text)
+        
+class Notizen(models.Model):
+    seite = models.ForeignKey(module_models.Unterseite, on_delete=models.CASCADE)
+    user = models.ForeignKey('Account', on_delete=models.CASCADE)
+    notiz = models.TextField(max_length=500)
+    class Meta:
+        verbose_name_plural = "Notizen"
+    def __str__(self):
+        return str(self.user) + ' - ' + str(self.seite) + ' - ' + str(self.notiz)
         
         
 class Account(AbstractBaseUser, PermissionsMixin):

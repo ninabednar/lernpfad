@@ -5,9 +5,19 @@ class Modul(models.Model):
     name = models.CharField(max_length=30)
     nummer = models.IntegerField(default=0)
     class Meta:
-            verbose_name_plural = "module"
+            verbose_name_plural = "Module"
     def __str__(self):
         return str(self.nummer) + ' | ' + self.name #In Admin-Oberfläche wird Name des Moduls angezeigt
+        
+class Unterseite(models.Model):
+    titel = models.CharField(max_length=30)
+    modulname = models.ForeignKey(Modul, on_delete=models.CASCADE)
+    nummer = models.IntegerField(default=0)
+    inhalt = models.TextField(max_length=2000)
+    class Meta:
+        verbose_name_plural = "Unterseiten"
+    def __str__(self):
+        return str(self.nummer) + ' | ' + self.titel #In Admin-Oberfläche wird Name des Moduls angezeigt
         
 class Frage(models.Model):
     frage_id = models.IntegerField(default=0)
