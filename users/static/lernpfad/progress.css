@@ -1,0 +1,70 @@
+.container{
+	margin-left: 9%;
+	margin-right: 9%;
+}
+.one, .two, .three, .four, .five{
+    position:absolute;
+	margin-top:-0.4em;
+	z-index:1;
+	height:1.25em;
+	width:1.25em;
+	border-radius:1em;
+}
+.one{
+	left:9%;
+}
+.two{
+	left:28%;
+}
+.three{
+	left:49%;
+}
+.four{
+    left:68%
+}
+.five{
+    left: 88%
+}
+.main-color{
+	background-color:#4EBBDA;
+}
+.no-color{
+	background-color:inherit;
+}
+.modul_eins{
+	position: relative;
+	left: 9.5%;
+	vertical-align: middle;
+}
+.modul_zwei{
+	position: relative;
+	left: 25%;
+	vertical-align: middle;
+}
+.modul_drei{
+	position: relative;
+	left: 55.5%;
+	vertical-align: middle;
+}
+.modul_vier{
+	position: relative;
+	left: 83%;
+	vertical-align: middle;
+}
+.modul_fuenf{
+	position: relative;
+	left: 112%;
+	vertical-align: middle;
+}
+.column {
+	float: left;
+  }
+.row {
+	content: "";
+	display: table;
+	clear: both;
+	max-width: 80%;
+}
+h4 {
+	text-align: center;
+}
