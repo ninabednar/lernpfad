@@ -18,6 +18,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('module', include('module.urls')),
+    path('', views.index, name='index'),
+    path('<int:modul_id>/<int:unterseite_id>', views.einfuehrung, name='einführung'),
+    
 ]
