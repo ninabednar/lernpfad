@@ -1,0 +1,73 @@
+.container{
+	margin-left: 9%;
+	margin-right: 9%;
+}
+.one, .two, .three, .four, .five{
+    position:absolute;
+	margin-top:-2.5em;
+	z-index:1;
+	height:6em;
+	width:6em;
+	border-radius:6em;
+}
+.one{
+	left:9%;
+}
+.two{
+	left:28%;
+}
+.three{
+	left:49%;
+}
+.four{
+    left:68%
+}
+.five{
+    left: 88%
+}
+.main-color{
+	background-color:#4EBBDA;
+}
+.no-color{
+	background-color:inherit;
+}
+.modul_eins{
+	position: relative;
+	left: 12%;
+	vertical-align: middle;
+}
+.modul_zwei{
+	position: relative;
+	left: 33.5%;
+	vertical-align: middle;
+}
+.modul_drei{
+	position: relative;
+	left: 69%;
+	vertical-align: middle;
+}
+.modul_vier{
+	position: relative;
+	left: 101.5%;
+	vertical-align: middle;
+}
+.modul_fuenf{
+	position: relative;
+	left: 136%;
+	vertical-align: middle;
+}
+.column {
+	float: left;
+  }
+.row {
+	content: "";
+	display: table;
+	clear: both;
+	max-width: 80%;
+}
+h3 {
+	text-align: center;
+}
+h2 {
+	font-weight: bold;
+}
