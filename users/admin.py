@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
-from .models import Account, QuizAnswer
+from .models import Account, QuizAnswer, Notizen
 from .forms import UserCreationForm, UserChangeForm
 
 
@@ -35,3 +35,4 @@ class AccountAdmin(BaseUserAdmin):
 
 admin.site.register(Account, AccountAdmin)
 admin.site.register(QuizAnswer)
+admin.site.register(Notizen)

@@ -13,6 +13,7 @@ class Unterseite(models.Model):
     titel = models.CharField(max_length=30)
     modulname = models.ForeignKey(Modul, on_delete=models.CASCADE)
     nummer = models.IntegerField(default=0)
+    inhalt = models.TextField(max_length=2000)
     class Meta:
         verbose_name_plural = "Unterseiten"
     def __str__(self):
