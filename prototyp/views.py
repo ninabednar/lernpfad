@@ -13,6 +13,8 @@ from django.http import HttpResponse
 from django.template import loader
 
         
-def members(request):
+def index(request):
     return render(request, 'users/index.html')
-    
+
+def module(request):
+    return render(request, 'module/base.html')
