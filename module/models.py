@@ -17,7 +17,7 @@ class Unterseite(models.Model):
     class Meta:
         verbose_name_plural = "Unterseiten"
     def __str__(self):
-        return str(self.nummer) + ' | ' + self.titel #In Admin-Oberfläche wird Name des Moduls angezeigt
+        return str(self.modulname) + ' | ' + str(self.nummer) + ' | ' + self.titel #In Admin-Oberfläche wird Name des Moduls angezeigt
         
 class Frage(models.Model):
     frage_id = models.IntegerField(default=0)
