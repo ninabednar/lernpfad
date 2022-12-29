@@ -11,8 +11,8 @@ class AccountManager(BaseUserManager):
     #https://dev.to/joshwizzy/customizing-django-authentication-using-abstractbaseuser-llg
     use_in_migrations = True
 
-    def _create_user(self, email, name, phone, password, **extra_fields):
-        values = [email, name, phone]
+    def _create_user(self, email, nachname, vorname, phone, password, **extra_fields):
+        values = [email, nachname, vorname, phone]
         field_value_map = dict(zip(self.model.REQUIRED_FIELDS, values))
         for field_name, value in field_value_map.items():
             if not value:
@@ -21,7 +21,8 @@ class AccountManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(
             email=email,
-            name=name,
+            nachname=nachname,
+            vorname=vorname,
             phone=phone,
             **extra_fields
         )
@@ -32,9 +33,9 @@ class AccountManager(BaseUserManager):
     def create_user(self, email, name, phone, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
-        return self._create_user(email, name, phone, password, **extra_fields)
+        return self._create_user
 
-    def create_superuser(self, email, name, phone, password=None, **extra_fields):
+    def create_superuser(self, email, nachname, vorname, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
@@ -43,7 +44,7 @@ class AccountManager(BaseUserManager):
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must have is_superuser=True.')
 
-        return self._create_user(email, name, phone, password, **extra_fields)
+        return self._create_user
 
 class QuizAnswer(models.Model):
     #https://stackoverflow.com/questions/50501420/how-do-i-save-user-specific-quiz-answers-in-django-models
@@ -83,7 +84,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['date_of_birth', 'nachname', 'vorname']
 
     def get_full_name(self):
-        return self.name
+        return self.nachname + self.vorname
 
     #def get_short_name(self):
     #    return self.name.split()[0]
