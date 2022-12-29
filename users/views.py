@@ -1,10 +1,7 @@
-from django.shortcuts import render
-
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
-from django.shortcuts import render
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
@@ -14,6 +11,8 @@ from django.urls import reverse
 from .models import Account
 from .forms import RegistrationForm
 
+from django.http import HttpResponse
+from django.template import loader
 
 class RegistrationView(CreateView):
     template_name = 'registration/register.html'
@@ -43,3 +42,7 @@ class ProfileView(UpdateView):
 
     def get_object(self):
         return self.request.user
+        
+def members(request):
+    return HttpResponse("Hello world!")
+    
