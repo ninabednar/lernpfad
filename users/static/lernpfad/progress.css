@@ -14,7 +14,7 @@
 	left:9%;
 }
 .two{
-	left:28%;
+	left:28.25%;
 }
 .three{
 	left:49%;
@@ -71,3 +71,28 @@ h3 {
 h2 {
 	font-weight: bold;
 }
+.collapsible {
+	background-color: #FFFFFF;
+	color: #4EBBDA;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border:black;
+	text-align: center;
+	outline:black ;
+	font-size: 15px;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         3px 3px 5px 6px #ccc;
+	border-radius:4%;
+}
+.content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         3px 3px 5px 6px #ccc;
+	border-radius:4%;
+  }

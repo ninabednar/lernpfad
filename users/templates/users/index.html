@@ -41,5 +41,62 @@
         </div>
     </div>
 
+    <div class="row"> <br>
+        <div class="column modul_eins">
+            <button type="button" class="collapsible modul_eins">Inhalte anzeigen</button>
+                <div class="content modul_eins">
+                <p>Allgemeine Informationen</p>
+                <p>Quiz</p>
+                </div>
+        </div>
+        <div class="column modul_zwei">
+            <button type="button" class="collapsible modul_zwei">Inhalte anzeigen</button>
+                <div class="content modul_zwei">
+                <p>Arten der Spende</p>
+                <p>Quiz</p>
+                <p>Nierenlebendspende</p>
+                <p>Organverteilung</p>
+                </div>
+        </div>
+        <div class="column modul_drei">
+            <button type="button" class="collapsible modul_drei">Inhalte anzeigen</button>
+                <div class="content modul_drei">
+                <p>Listungsprozess</p>
+                <p>Zeit auf der Warteliste</p>
+                <p>Quiz</p>
+                </div>
+        </div>
+        <div class="column modul_vier">
+            <button type="button" class="collapsible modul_vier">Inhalte anzeigen</button>
+                <div class="content modul_vier">
+                <p>Komplikationen</p>
+                <p>Quiz</p>
+                </div>
+        </div>
+        <div class="column modul_fuenf">
+            <button type="button" class="collapsible modul_fuenf">Inhalte anzeigen</button>
+                <div class="content modul_fuenf">
+                <p>Bereit für das Erstaufklärungsgespräch</p>
+                </div>
+        </div>
+    </div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+        
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+         content.style.display = "none";
+      } else {
+         content.style.display = "block";
+       }
+       });
+ }
+</script>
+        
 
 {% endblock content %}
