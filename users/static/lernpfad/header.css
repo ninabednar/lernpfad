@@ -1,9 +1,17 @@
 /* Header/MUI-ToolBar */
 .header {
     overflow: hidden;
-    background-color: #f1f1f1;
-    padding: 20px 10px;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 3px solid #aaa;
   }
+
+.header img {
+    height: 75px;
+    width: 280px;
+    top: 24px;
+    left: 31px;
+    }
   
   .header a {
     float: left;
@@ -11,8 +19,9 @@
     text-align: center;
     padding: 12px;
     text-decoration: none;
-    font-size: 18px; 
-    line-height: 25px;
+    font-size: 22px; 
+    font-weight: 500;
+    line-height: 36px;
     border-radius: 4px;
   }
   
@@ -33,4 +42,11 @@
   
   .header-right {
     float: right;
+  }
+
+  .header-right img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    top: 23px;
   }
