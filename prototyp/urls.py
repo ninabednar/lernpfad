@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
+from module.views import index
+
 urlpatterns = [
+    path('', index, name='index'),
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('module/', views.module, name='module')
     #path('module/', include('module.urls')),
+    path('module/', include('module.urls')),
 ]
