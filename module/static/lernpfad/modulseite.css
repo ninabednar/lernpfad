@@ -1,8 +1,56 @@
 /* Styling der Modulseiten */
 
 /* Zurück zur Übersicht Button */
+
+b{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 174.5%;
+	/* or 38px */
+	letter-spacing: 0.035em;
+
+	color: #2F3333;
+}
+
+h1{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 161.5%;
+	/* or 39px */
+
+	color: #948357;
+
+	
+}
 .button {
     display: inline-block;
     font-size: 12px;
     background-color: #4CAF50;
 }
+
+h1.einfuehrung{
+	color: #948357;
+	font-weight: 400;
+}
+
+/* Rectangle 52 */
+
+div.container
+{
+	position: absolute;
+	width: 1567px;
+	height: 842px;
+	left: 55px;
+	top: 144px;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 35px;
+}
+
+
+
