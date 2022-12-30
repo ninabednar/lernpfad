@@ -1,11 +1,15 @@
 {% extends "module/header.html" %}
 
 {% block content %}
-<h1> {{modul.name}}</h1>
-<h2 class="name">{{ unterseite.titel }}</h2>
-<p>{{ unterseite.nummer}}</p>
+<div class="container">
+	<h1> {{modul.name}}</h1> <br>
+	<h2 class="name">{{ unterseite.titel }}</h2><br>
+	
+	{{ unterseite.inhalt |safe }}
+	<a class="btn btn-primary" href="#" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Seite</a>
+	
+</div>
 <br>
-{{ unterseite.inhalt |safe }}
-<a href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Seite</a>
+
 
 {% endblock content %}
