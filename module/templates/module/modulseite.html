@@ -2,11 +2,17 @@
 
 {% block content %}
 
-
-<h1> {{modul.name}}</h1>
 <div>
-    <button class="button">Zurück zur Übersicht</button>
+<br>
+    <button class="button"> <- Zurück zur Übersicht</button>
 </div>
-
+<br>
+<div class="modulinhalte">
+<h1 class="modul-ueberschrift"> {{modul.name}}</h1>
+<br>
+<br>
+<br>
+<h2 class="modul-unterseite">{{ unterseite.titel }}</h2>
+</div>
 
 {% endblock content %}

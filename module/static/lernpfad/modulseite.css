@@ -2,7 +2,18 @@
 
 /* Zurück zur Übersicht Button */
 .button {
-    display: inline-block;
+    text-align: right;
     font-size: 12px;
-    background-color: #4CAF50;
+    background-color: #E6E3E6;
+    border-radius: 11px;
+    margin-left: 2em;
+}
+
+.modulinhalte {
+    margin-left: 30em;
+}
+
+.modul-ueberschrift {
+    float: right;
+	margin-right: 3em;
 }
