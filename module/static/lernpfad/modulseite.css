@@ -1,0 +1,8 @@
+/* Styling der Modulseiten */
+
+/* Zurück zur Übersicht Button */
+.button {
+    display: inline-block;
+    font-size: 12px;
+    background-color: #4CAF50;
+}
