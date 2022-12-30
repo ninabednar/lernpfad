@@ -25,5 +25,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('module/', views.module, name='module')
     #path('module/', include('module.urls')),
-    path('module/', include('module.urls')),
+    #path('module/', include('module.urls')),
 ]
