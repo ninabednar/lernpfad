@@ -5,15 +5,26 @@
     text-align: right;
     font-size: 12px;
     background-color: #E6E3E6;
-    border-radius: 11px;
-    margin-left: 2em;
+    border-radius: 15px;
+    margin-left: 3em;
 }
 
+/* Die Modulinhalte in einem div */
 .modulinhalte {
-    margin-left: 30em;
+    margin-left: 40em;
 }
 
-.modul-ueberschrift {
+.modulinhalte h1 {
     float: right;
-	margin-right: 3em;
+    align-content: right;
+    margin-right: 3em;
+}
+
+.modulinhalte h2 {
+    margin-left: 5em;
+}
+
+.modulinhalte img {
+    width: 1113px;
+    height: 348px;
 }

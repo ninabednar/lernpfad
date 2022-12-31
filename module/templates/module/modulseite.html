@@ -1,5 +1,8 @@
 {% extends "module/header.html" %}
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'lernpfad/modulseite.css' %}">
+
 {% block content %}
 
 <div>
@@ -8,11 +11,13 @@
 </div>
 <br>
 <div class="modulinhalte">
-<h1 class="modul-ueberschrift"> {{modul.name}}</h1>
-<br>
-<br>
-<br>
-<h2 class="modul-unterseite">{{ unterseite.titel }}</h2>
+    <h1> {{modul.name}}</h1>
+    <br>
+    <br>
+    <br>
+    <h2>{{ unterseite.titel }}</h2>
+    <br>   
+    <img src="{% static 'lernpfad/bild_plastik_niere.jpg' %}" alt="Bild einer Plastik Niere" width="500">
 </div>
 
 {% endblock content %}
