@@ -7,7 +7,9 @@
 <body class="body">
 <div>
 <br>
-    <button class="button"> <- Zurück zur Übersicht</button>
+{% comment %} Button führt einen eine Seite zurück, müsste noch angepasst werden, 
+dass es auf die Übersichtsseite leitet {% endcomment %}
+    <button class="button" onclick="history.go(-1)"> <- Zurück zur Übersicht</button>
 </div>
 <br>
 <div class="modulinhalte">
@@ -27,6 +29,7 @@
     <br>
     <br>
     <br>
+    <button class="backbutton" onclick="history.go(-1)"> <- Vorherige Seite</button>
     <a class="btn btn-primary" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Seite -></a>
 </div>
 </body>
