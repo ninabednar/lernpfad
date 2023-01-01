@@ -16,7 +16,8 @@ def modulseite(request, modul_id, unterseite_id):
     
     return render(request, 'module/modulseite.html', {'modul': modul, 'unterseite' : unterseite})
 
-def einfuehrung(request, modul_id, unterseite_id):
+def einfuehrung(request, unterseite_id):
+    modul_id = 0
     modul = models.Modul.objects.get(nummer=modul_id)
     unterseite = models.Unterseite.objects.get(nummer=unterseite_id, modul = modul)
     

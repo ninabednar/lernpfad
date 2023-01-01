@@ -18,8 +18,11 @@ from django.urls import path, include
 from . import views
 
 app_name = 'module'
-
 urlpatterns = [
-    path('<int:modul_id>/<int:unterseite_id>/', views.einfuehrung, name='einführung'),
+    #path('', views.index, name='index'),
+    path('einfuehrung/<int:unterseite_id>/', views.einfuehrung, name='einführung'),
     path('<int:modul_id>/<int:unterseite_id>/', views.modulseite, name='modulseite'),
+    #path('module/', include('module.urls')),
+    #path('', views.index, name='index'),
+
 ]
