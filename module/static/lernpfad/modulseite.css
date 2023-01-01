@@ -47,5 +47,11 @@
 .lerntext {
     margin-left: 1em;
     margin-right: 3em;
-    font-size: 20px;
+    font-size: 20px
+}
+
+/* Nächste Seite Button */
+.btn-primary {
+    float: right;
+    margin-right: 8em;
 }
