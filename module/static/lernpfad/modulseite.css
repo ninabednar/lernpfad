@@ -1,8 +1,82 @@
 /* Styling der Modulseiten */
+.body {
+    background-color: #E6E6E6;
+}
 
 /* Zurück zur Übersicht Button */
 .button {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    background-color: #E6E3E6;
+    border-radius: 11px;
+    border:0.1em solid white;
+    margin-left: 3em;
     display: inline-block;
-    font-size: 12px;
-    background-color: #4CAF50;
+    height: 40px;
+    width: 270px;
+    position: absolute;
+}
+
+/* Die Modulinhalte in einem div */
+.modulinhalte {
+    margin-left: 45em;
+    margin-right: 13em;
+    font-family: 'Lato', sans-serif;
+}
+
+.modulinhalte h1 {
+    float: right;
+    align-content: right;
+    margin-right: 3em;
+}
+
+.modulinhalte h2 {
+    margin-left: 1em;
+}
+
+.modulinhalte img {
+    margin-left: 1em;
+    border-radius: 18px;
+    box-shadow: 0px 0px 5px black;
+    width: 1113px;
+    height: 348px;
+    object-fit: cover;
+}
+
+.modulinhalte p {
+    margin-left: 1em;
+}
+
+.lerntext {
+    margin-left: 1em;
+    margin-right: 3em;
+    font-size: 20px
+}
+
+/* Nächste Seite Button */
+.btn-primary {
+    float: right;
+    margin-right: 3em;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    height: 40px;
+    width: 270px;
+    border-radius: 11px;
+}
+
+/* Eine Seite zurück Button */
+.backbutton {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    background-color:#BEBEBE;
+    border-radius: 11px;
+    border: 0px;
+    margin-left: 3em;
+    display: inline-block;
+    height: 40px;
+    width: 270px;
 }
