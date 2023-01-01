@@ -18,6 +18,12 @@
     <h2>{{ unterseite.titel }}</h2>
     <br>   
     <img src="{% static 'lernpfad/bild_plastik_niere.jpg' %}" alt="Bild einer Plastik Niere" width="500">
+    <br>
+    <br>
+    <p>Quelle Bild</p>
+    <br>
+    <br>
+    <p class="lerntext">{{ unterseite.inhalt |safe }}</p>
 </div>
 </body>
 
