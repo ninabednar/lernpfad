@@ -3,10 +3,12 @@
 {% block content %}
 <div class="container">
 	<h1> {{modul.name}}</h1> <br>
+	<h1 class="einfuehrung"> {{modul.name}} überspringen </h1> <br>
 	<h2 class="name">{{ unterseite.titel }}</h2><br>
 	
 	{{ unterseite.inhalt |safe }}
-	<a class="btn btn-primary" href="#" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Seite</a>
+	<br>
+	<a class="btn" href="/module/{{modul.nummer}}/{{unterseite.naechste}}" role="button">Nächste Seite</a>
 	
 </div>
 <br>
