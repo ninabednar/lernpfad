@@ -4,16 +4,22 @@
 <link rel="stylesheet" type="text/css" href="{% static 'lernpfad/einfuehrung.css' %}">
 
 {% block content %}
-<div class="container">
-	<h1> {{modul.name}}</h1> <br>
-	<h1 class="einfuehrung"> {{modul.name}} überspringen X </h1> <br>
+<div class="container-einfuehrung">
+	<h1 class="ueberschrift-einfuehrung"> {{modul.name}}</h1> <br>
+	<h3 class="einfuehrung"> {{modul.name}} überspringen X </h3> <br>
 	
-	<h2 class="name">{{ unterseite.titel }}</h2><br>
-	
-	{{ unterseite.inhalt |safe }}
+	<h2 class="einfuehrung-unterseite">{{ unterseite.titel }}</h2><br>
+	<div class="einfuehrung-inhalt">
+		<p>{{ unterseite.inhalt |safe }}</p>
+	</div>
+	<div class="einfuehrung-bild">
+	{% comment %} <img src="{% static 'lernpfad/modulseite/'|add:unterseite.bild %}" alt="{{unterseite.bild_beschreibung}}" width="400"> {% endcomment %}
+	Platzhalter Bild
+	</div>
 	<br>
-	<a class="btn" href="/module/einfuehrung/{{unterseite.naechste}}" role="button">Nächste Seite</a>
-	
+	<div class="btn-einfuehrung-container">
+		<a class="btn" href="/module/einfuehrung/{{unterseite.naechste}}" role="button">Nächste Seite -></a>
+	</div>
 </div>
 <br>
 
