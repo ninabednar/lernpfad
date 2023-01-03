@@ -24,26 +24,24 @@ dass es auf die Übersichtsseite leitet {% endcomment %}
 <br>
 <div class="quizinhalte">
     {% comment %} <h1> {{frage.name}}</h1> {% endcomment %}
-    <h1>1. Modulquiz</h1>
+    <h1>{{ modul.nummer}}. Modulquiz</h1>
     <br>
     <br>
     <br>
-    {% comment %} <h2>{{ frage.titel }}</h2> {% endcomment %}
-    <h2>Frage 1:</h2>
+    {% comment %} Frage (Nummer der Frage): {% endcomment %}
+    <h2>Frage {{ frage.frage_id}}:</h2>
     <br>   
     <br>
-    {% comment %} <p class="Frage">{{ fragen.inhalt |safe }}</p> {% endcomment %}
-    <p class="frage">Hier steht die Frage</p>
+    {% comment %} Frage {% endcomment %}
+    <p class="frage">{{frage.frage_satz}}</p>
     <br>
     <br>
-    <button class="antwortbtn">Richtig</button>
+	{% for antwort in antwortliste %}
+	<button class="antwortbtn" richtig="{{antwort.richtige_loesung}}">{{ antwort.antwort_text }}</button>
     <br>
     <br>
-    <button class="antwortbtn">Falsch</button>
-    <br>
-    <br>
-    <br>
-    <br>
+	{% endfor %}
+    
     <button class="btn-frage" onclick="">Nächste Frage -></button>
     {% comment %} <a class="btn btn-primary" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Frage -></a> {% endcomment %}
 </div>
