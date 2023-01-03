@@ -1,9 +1,10 @@
+/* Gesamter Rahmen für die Größe des Fortschrittbalkens und der dazugehörigen Elemente*/
 .rahmen{
 	max-width: 100%;
 	margin-top: 8em;
 	margin-left: 1em;
 }
-
+/* Einstellungen für alle Modulüberschriften (z.B. Abstände, Position)*/
 .ueberschriften{
 	max-width: 90%;
 	margin-left: 0em;
@@ -11,17 +12,10 @@
 	flex-direction:row;
 	justify-content: space-around;
 }
-
+/* Individuelle Einstellung für die Modulüberschriften (Schriftgröße und -zentrierung)*/
 .ueberschrift{
 	text-align:center;
 	font-size: 20pt;
-}
-
-.progressbar{
-	display: flex;
-	flex-direction:row;
-	justify-content: space-around;
-	color: #4EBBDA;
 }
 
 .progress {
@@ -60,26 +54,15 @@
 	text-align: center;
 	background-color:#BEBEBE;
 }
-
-.column {
-	float: left;
-}
-
-.row {
-	content: "";
-	display: table;
-	clear: both;
-	max-width: 80%;
-}
-
+/* Einstellung für Absatz h3*/
 h3 {
 	text-align: center;
 }
-
+/* Einstellung für Absatz h2*/
 h2 {
 	font-weight: bold;
 }
-
+/* Einstellungen für die aufklappbare Inhaltsliste*/
 .collapsible {
 	margin-top: 10em;
 	background-color: #FFFFFF;
@@ -97,7 +80,7 @@ h2 {
 	box-shadow:         3px 3px 5px 6px #ccc;
 	border-radius:4%;
 }
-
+/* Einstellungen für den Inhalt der aufklappbaren Liste*/
 .content {
 	font-size:small;
 	font-weight: bold;
