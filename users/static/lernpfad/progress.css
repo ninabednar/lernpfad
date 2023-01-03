@@ -18,7 +18,7 @@
 }
 
 .progressbar{
-	margin-left: 1em;
+	
 	display: flex;
 	flex-direction:row;
 	justify-content: space-around;
@@ -26,14 +26,15 @@
 }
 
 .progress {
-	max-width:100%;
-	margin-left: 50em;
+	max-width:90%;
+	margin-left: 35em;
+	
 }
 
 .progressleiste {
-	max-width:90%;
-	margin-top: -5em;
-	margin-right: 55em;
+	max-width:100%;
+	margin-top: -26em;
+	margin-right: 45em;
 }
 
 /* Aktueller Progress (eingefärbt)*/
@@ -82,6 +83,7 @@ h2 {
 }
 
 .collapsible {
+	margin-top: 10em;
 	background-color: #FFFFFF;
 	color: #4EBBDA;
 	font-weight: bold;
