@@ -3,6 +3,27 @@
     background-color: #E6E6E6;
 }
 
+/* Seitliche Übersichtsleiste-Quiz */
+.uebersichtsleiste-quiz {
+    display: flex;
+    position: absolute;
+    float: left;
+    background-color: #61976EB2;
+    width: 15%;
+    height: 65%;
+    margin-left: 6em;
+    margin-top: 10em;
+    border-radius: 15px;
+}
+
+/* Kommentarfeld in der seiltichen Übersichtsleiste-Quiz */
+.kommentarfeld-quiz {
+    margin-right: 5em;
+    margin-top: 45em;
+    margin-bottom: 2em;
+    width: 230px;
+}
+
 /* Überschrift */
 h1{
 	font-family: 'Lato';
@@ -46,6 +67,7 @@ h1{
 .btn-frage {
     float: right;
     margin-right: 3em;
+	margin-top: 15em;
     text-align: center;
     font-size: 20px;
     font-weight: 400;

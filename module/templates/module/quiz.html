@@ -5,12 +5,22 @@
 
 {% block content %}
 <body class="body">
+
 <div>
 <br>
 {% comment %} Button führt einen eine Seite zurück, müsste noch angepasst werden, 
 dass es auf die Übersichtsseite leitet {% endcomment %}
     <button class="button" onclick="history.go(-1)"> <- Zurück zur Übersicht</button>
 </div>
+
+{% comment %} Container für seitliche Sicht der Übersichtsleiste, Quiz {% endcomment %}
+<div class="uebersichtsleiste-quiz">
+    <p>Allgemeine Infos</p>
+    <br>
+    <br>
+    <textarea class="kommentarfeld-quiz" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+</div>
+
 <br>
 <div class="quizinhalte">
     {% comment %} <h1> {{frage.name}}</h1> {% endcomment %}
