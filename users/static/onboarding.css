@@ -1,22 +1,40 @@
 body{
 	background-color: #FAF5F6;
 }
+
+.container{
+	max-width: 100%;
+	display: flex;
+	flex-direction: row;
+	padding-left: 0em;
+}
+
+.text{
+	display: flex;
+	flex-direction:column;
+	
+}
+
 h1 {
+	padding-top: 2em;
 	font-size: 8em;
 	color: #BAA874;
 }
 
 h2 {
 	font-size: 5em;
+	text-align: right;
 }
 
 p{
 	font-size: 2em;
-}
-.container{
+	padding-top: 3em;
 }
 
 .btn{
 	background-color: #BAA874;
 	color: white;
+	max-width: 10em;
+	text-align: center;
+	font-size: 3em;
 }
