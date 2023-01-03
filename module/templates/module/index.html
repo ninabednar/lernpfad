@@ -1,45 +1,108 @@
 {% extends "module/header.html" %}
 
 {% block content %}
+<!-- Willkommensüberschrift -->
+<h1 class="name">Willkommen Name!</h1>
 
-
-<h1 class="name">Willkommen Name!
-    
-    <div class="row"> <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="column modul_eins">
-            <h3>Modul 1
-            <h2>Allgemeine Informationen
-        </div>
-        <div class="column modul_zwei">
-            <h3>Modul 2
-            <h2>Arten der Spende
-        </div>
-        <div class="column modul_drei">
-            <h3>Modul 3
-            <h2>Warteliste
-        </div>
-        <div class="column modul_vier">
-            <h3>Modul 4
-            <h2>Komplikationen
-        </div>
-        <div class="column modul_fuenf">
-            <h3>Modul 5
-            <h2>Abschluss
-        </div>
-      </div>
-      <br>
-    <div class="container"> <br>
-        <div class="progress" style="width: 137.5%">
-            <div class="one main-color"></div><div class="two main-color"></div><div class="three no-color"></div><div class="four no-color"></div><div class="five no-color"></div>  
-            <div class="progress-bar main-color"style="width: 30%"></div>
-            </div>
-        </div>
-        </div>
+<!-- Container für Einstellungen der Fortschrittsleiste -->
+<div class="progressleiste"> 
+    <div class="progress" style="width: 90%;">
+        <div class="currentprogress"style="width: 30%"></div>
     </div>
+</div>
 
+<!-- Container für die Rahmeneinstellungen -->
+<div class="rahmen">
+	<!-- Container für die allgemeinen Überschriftseinstellungen -->    
+	<div class="ueberschriften"> <br>
+        <!-- Container für Inhalt und aufklappbare Liste des ersten Moduls -->
+		<div class="ueberschrift">
+			<h3>Modul 1</h3>
+			<h2>Allgemeine Informationen</h2>
+			<button type="button" class="btn btn-primary btn-circle btn-xl unlocked"></button>
+			<button type="button" class="collapsible">Inhalte anzeigen ↓</button>
+			<div class="content">
+				<p>Allgemeine Informationen</p>
+				<p>Quiz</p>
+			</div>
+		</div>
+		<!-- Container für Inhalt und aufklappbare Liste des zweiten Moduls -->
+		<div class="ueberschrift">
+			<h3>Modul 2</h3>
+			<h2>Arten der Spende</h2>
+			<button type="button" class="btn btn-primary btn-circle btn-xl unlocked"></button>
+			<button type="button" class="collapsible">Inhalte anzeigen ↓</button>
+			<div class="content">
+				<p>Arten der Spende</p>
+				<p>Quiz</p>
+				<p>Nierenlebendspende</p>
+				<p>Organverteilung</p>
+			</div>
+		</div>
+		<!-- Container für Inhalt und aufklappbare Liste des dritten Moduls -->
+		<div class="ueberschrift">
+			<h3>Modul 3</h3>
+			<h2>Warteliste</h2>
+			<button type="button" class="btn btn-primary btn-circle btn-xl locked"></button>
+			<button type="button" class="collapsible">Inhalte anzeigen ↓</button>
+			<div class="content">
+				<p>Listungsprozess</p>
+				<p>Zeit auf der Warteliste</p>
+				<p>Quiz</p>
+			</div>
+			
+		</div>
+		<!-- Container für Inhalt und aufklappbare Liste des vierten Moduls -->
+		<div class="ueberschrift">
+			<h3>Modul 4</h3> 	
+			<h2>Komplikationen</h2>
+			<button type="button" class="btn btn-primary btn-circle btn-xl locked"></button>
+			<button type="button" class="collapsible">Inhalte anzeigen ↓</button>
+			<div class="content">
+				<p>Komplikationen</p>
+				<p>Quiz</p>
+			</div>
+		</div>
+		<!-- Container für Inhalt und aufklappbare Liste des fünften Moduls -->
+		<div class="ueberschrift">
+			<h3>Modul 5</h3>
+			<h2>Abschluss</h2>
+			<button type="button" class="btn btn-primary btn-circle btn-xl locked"></button>
+			<button type="button" class="collapsible">Inhalte anzeigen ↓</button>
+			<div class="content">
+				<p>Bereit für das</p>
+                <p>Erstaufklärungsgespräch</p>
+			</div>
+		</div>
+	</div>
+	<br>
+</div>
+
+<div class="seitenende">
+    <button type="button" class="start">Lernpfad starten</button>
+</div>
+
+<div class="bottomleft">
+    <button type="button" class="hilfe">?</button>
+</div>
+
+<!-- Skript für die Funktionalität der Listen -->
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+        
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+         content.style.display = "none";
+      } else {
+         content.style.display = "block";
+       }
+       });
+ }
+</script>
+        
 
 {% endblock content %}
