@@ -23,7 +23,7 @@ urlpatterns = [
     path('einfuehrung/<int:unterseite_id>/', views.einfuehrung, name='einführung'),
     path('<int:modul_id>/<int:unterseite_id>/', views.modulseite, name='modulseite'),
     path('quiz/<int:modul_id>/<int:frage_id>/', views.quiz, name='quiz'),
-    path('antworten/<int:modul_id>/<int:frage_id>/', views.antworten, name='antworten'),
+    path('ergebnis/<int:modul_id>/<int:frage_id>/', views.ergebnis, name='ergebnis'),
     #path('module/', include('module.urls')),
     #path('', views.index, name='index'),
 
