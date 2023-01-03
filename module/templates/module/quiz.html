@@ -13,23 +13,29 @@ dass es auf die Übersichtsseite leitet {% endcomment %}
 </div>
 <br>
 <div class="quizinhalte">
-    <h1> {{modul.name}}</h1>
+    {% comment %} <h1> {{frage.name}}</h1> {% endcomment %}
+    <h1>1. Modulquiz</h1>
     <br>
     <br>
     <br>
-    <h2>{{ unterseite.titel }}</h2>
+    {% comment %} <h2>{{ frage.titel }}</h2> {% endcomment %}
+    <h2>Frage 1:</h2>
     <br>   
-	<img src="{% static 'lernpfad/modulseite/'|add:unterseite.bild %}" alt="{{unterseite.bild_beschreibung}}" width="500">
+    <br>
+    {% comment %} <p class="Frage">{{ fragen.inhalt |safe }}</p> {% endcomment %}
+    <p class="frage">Hier steht die Frage</p>
     <br>
     <br>
-    <p>Quelle: {{ unterseite.bild_quelle }}</p>
+    <button class="antwortbtn">Richtig</button>
     <br>
     <br>
-    <p class="lerntext">{{ unterseite.inhalt |safe }}</p>
+    <button class="antwortbtn">Falsch</button>
     <br>
     <br>
     <br>
-    <a class="btn btn-primary" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Frage -></a>
+    <br>
+    <button class="btn-frage" onclick="">Nächste Frage -></button>
+    {% comment %} <a class="btn btn-primary" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Frage -></a> {% endcomment %}
 </div>
 </body>
 

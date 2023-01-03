@@ -3,8 +3,6 @@
     background-color: #E6E6E6;
 }
 
-/* Zurück zur Übersicht Button */
-
 b{
 	font-family: 'Lato';
 	font-style: normal;
@@ -28,6 +26,7 @@ h1{
 	color: #948357;	
 }
 
+/* Zurück zur Übersicht Button */
 .button {
     text-align: center;
     font-size: 20px;
@@ -45,8 +44,7 @@ h1.einfuehrung{
 	font-weight: 400;
 }
 
-div.container
-{
+div.container{
 	position: absolute;
 	width: 1567px;
 	height: 842px;
