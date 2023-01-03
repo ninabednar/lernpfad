@@ -67,7 +67,7 @@ h1{
 .btn-frage {
     float: right;
     margin-right: 3em;
-	margin-top: 15em;
+	margin-top: 10em;
     text-align: center;
     font-size: 20px;
     font-weight: 400;
@@ -76,4 +76,12 @@ h1{
     border-radius: 11px;
 	color: #E6E6E6;
 	border:0.1em solid white;
+}
+
+/* Ergbenis-Sytling */
+.antwort {
+    margin-left: 10em;
+    margin-right: 3em;
+    margin-top: 5em;
+    font-size: 20px
 }

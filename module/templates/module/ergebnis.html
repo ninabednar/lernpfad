@@ -41,7 +41,9 @@ dass es auf die Übersichtsseite leitet {% endcomment %}
     <br>
     <br>
 	{% endfor %}
-    
+    {% comment %} <img src="{% static 'lernpfad/modulseite/'|add:unterseite.bild %}" alt="{{unterseite.bild_beschreibung}}" width="200"> {% endcomment %}
+    <p class="antwort"> Antwort Text</p>
+
     <button class="btn-frage" onclick="">Nächste Frage -></button>
     {% comment %} <a class="btn btn-primary" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Frage -></a> {% endcomment %}
 </div>
