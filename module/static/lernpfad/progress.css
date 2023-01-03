@@ -1,73 +1,144 @@
-.container{
-	margin-left: 9%;
-	margin-right: 9%;
+/* Gesamter Rahmen für die Größe des Fortschrittbalkens und der dazugehörigen Elemente*/
+.rahmen{
+	max-width: 100%;
+	margin-top: 8em;
+	margin-left: 1em;
 }
-.one, .two, .three, .four, .five{
-    position:absolute;
-	margin-top:-2.5em;
-	z-index:1;
-	height:6em;
-	width:6em;
-	border-radius:6em;
+/* Einstellungen für alle Modulüberschriften (z.B. Abstände, Position)*/
+.ueberschriften{
+	margin-top: -17em;
+	max-width: 90%;
+	margin-left: 0em;
+	display: flex;
+	flex-direction:row;
+	justify-content: space-around;
 }
-.one{
-	left:9%;
+/* Individuelle Einstellung für die Modulüberschriften (Schriftgröße und -zentrierung)*/
+.ueberschrift{
+	text-align:center;
+	font-size: 20pt;
 }
-.two{
-	left:28%;
+/* Bootstrapkonfigurationen für den Fortschrittsbalken mit kleinen Änderungen*/
+.progress {
+	max-width:90%;
+	margin-left: 35em;
 }
-.three{
-	left:49%;
+/* Positionierungseinstellungen der Fortschrittsleiste*/
+.progressleiste {
+	max-width:100%;
+	margin-top: 20em;
+	margin-right: 45em;
 }
-.four{
-    left:68%
+
+/* Aktueller Progress (eingefärbt)*/
+.currentprogress{
+	background-color: #4EBBDA;
 }
-.five{
-    left: 88%
-}
-.main-color{
+
+/* Freigeschaltete Module */
+.btn-circle.btn-xl.unlocked {
+	width: 60px;
+	height: 60px;
+	padding: 13px 18px;
+	border-radius: 60px;
+	border-color: #4EBBDA;
+	text-align: center;
 	background-color:#4EBBDA;
 }
-.no-color{
-	background-color:inherit;
+/* Gesperrte Module */
+.btn-circle.btn-xl.locked {
+	width: 60px;
+	height: 60px;
+	padding: 13px 18px;
+	border-radius: 60px;
+	border-color: #BEBEBE;
+	text-align: center;
+	background-color:#BEBEBE;
 }
-.modul_eins{
-	position: relative;
-	left: 12%;
-	vertical-align: middle;
-}
-.modul_zwei{
-	position: relative;
-	left: 33.5%;
-	vertical-align: middle;
-}
-.modul_drei{
-	position: relative;
-	left: 69%;
-	vertical-align: middle;
-}
-.modul_vier{
-	position: relative;
-	left: 101.5%;
-	vertical-align: middle;
-}
-.modul_fuenf{
-	position: relative;
-	left: 136%;
-	vertical-align: middle;
-}
-.column {
-	float: left;
-  }
-.row {
-	content: "";
-	display: table;
-	clear: both;
-	max-width: 80%;
-}
+/* Einstellung für Absatz h3*/
 h3 {
 	text-align: center;
 }
+/* Einstellung für Absatz h2*/
 h2 {
 	font-weight: bold;
+}
+/* Einstellungen für die aufklappbare Inhaltsliste*/
+.collapsible {
+	margin-top: 10em;
+	background-color: #FFFFFF;
+	color: #4EBBDA;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border:black;
+	text-align: center;
+	outline:black ;
+	font-size: 15px;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         3px 3px 5px 6px #ccc;
+	border-radius:4%;
+}
+/* Einstellungen für den Inhalt der aufklappbaren Liste*/
+.content {
+	font-size:small;
+	font-weight: bold;
+	padding: 18px;
+	display: none;
+	overflow: hidden;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         3px 3px 5px 6px #ccc;
+	border-radius:4%;
+}
+
+.seitenende {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	size: 50em;
+	text-align: center;
+	margin-bottom: 5em
+}
+
+.start{
+	background-color: #4EBBDA;
+	color: #FFFFFF;
+	font-weight: bold;
+	cursor: pointer;
+	border:black;
+	text-align: center;
+	outline:black ;
+	font-size: 20px;
+	padding: 1em;
+	width: 20%;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         3px 3px 5px 6px #ccc;
+	border-radius:4%;
+}
+.bottomleft{
+	left: 5em;
+	position: fixed;
+	bottom: 0;
+	width: 10%;
+	size: 50em;
+	text-align: left;
+	margin-bottom: 5em
+}
+.hilfe{
+	color: #4EBBDA;
+	width: 70px;
+	height: 70px;
+	padding: 13px 18px;
+	border-radius: 60px;
+	text-align:center;
+	background-color:#FFFFFF;
+	font-size: xx-large;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         3px 3px 5px 6px #ccc;
 }
