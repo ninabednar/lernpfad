@@ -17,12 +17,12 @@
 	text-align:center;
 	font-size: 20pt;
 }
-
+/* Bootstrapkonfigurationen für den Fortschrittsbalken mit kleinen Änderungen*/
 .progress {
 	max-width:90%;
 	margin-left: 35em;
 }
-
+/* Positionierungseinstellungen der Fortschrittsleiste*/
 .progressleiste {
 	max-width:100%;
 	margin-top: -26em;
