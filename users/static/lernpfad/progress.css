@@ -6,6 +6,7 @@
 }
 /* Einstellungen für alle Modulüberschriften (z.B. Abstände, Position)*/
 .ueberschriften{
+	margin-top: -17em;
 	max-width: 90%;
 	margin-left: 0em;
 	display: flex;
@@ -25,7 +26,7 @@
 /* Positionierungseinstellungen der Fortschrittsleiste*/
 .progressleiste {
 	max-width:100%;
-	margin-top: -26em;
+	margin-top: 20em;
 	margin-right: 45em;
 }
 
