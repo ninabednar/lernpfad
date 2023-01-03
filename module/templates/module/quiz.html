@@ -1,0 +1,36 @@
+{% extends "module/header.html" %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'lernpfad/quiz/quiz.css' %}">
+
+{% block content %}
+<body class="body">
+<div>
+<br>
+{% comment %} Button führt einen eine Seite zurück, müsste noch angepasst werden, 
+dass es auf die Übersichtsseite leitet {% endcomment %}
+    <button class="button" onclick="history.go(-1)"> <- Zurück zur Übersicht</button>
+</div>
+<br>
+<div class="quizinhalte">
+    <h1> {{modul.name}}</h1>
+    <br>
+    <br>
+    <br>
+    <h2>{{ unterseite.titel }}</h2>
+    <br>   
+	<img src="{% static 'lernpfad/modulseite/'|add:unterseite.bild %}" alt="{{unterseite.bild_beschreibung}}" width="500">
+    <br>
+    <br>
+    <p>Quelle: {{ unterseite.bild_quelle }}</p>
+    <br>
+    <br>
+    <p class="lerntext">{{ unterseite.inhalt |safe }}</p>
+    <br>
+    <br>
+    <br>
+    <a class="btn btn-primary" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Frage -></a>
+</div>
+</body>
+
+{% endblock content %}

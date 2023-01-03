@@ -1,0 +1,16 @@
+/* Styling der Quizseiten */
+.body {
+    background-color: #E6E6E6;
+}
+
+/* Überschrift */
+h1{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 161.5%;
+	/* or 39px */
+
+	color: #948357;	
+}
