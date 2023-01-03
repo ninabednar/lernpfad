@@ -32,3 +32,13 @@ def quiz(request, modul_id, frage_id, ):
         antwortliste.append(antwort)
     
     return render(request, 'module/quiz.html', {'modul': modul, 'frage' : frage, 'antwortliste': antwortliste})
+
+def antworten(request, modul_id, frage_id, ):
+    modul = models.Modul.objects.get(nummer=modul_id)
+    frage = models.Frage.objects.get(frage_id=frage_id, modul = modul)
+    antworten =  models.Antwort.objects.filter(frage=frage)
+    antwortliste = []
+    for antwort in antworten:
+        antwortliste.append(antwort)
+    
+    return render(request, 'module/anworten.html', {'modul': modul, 'frage' : frage, 'antwortliste': antwortliste})
