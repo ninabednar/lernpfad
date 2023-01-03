@@ -3,8 +3,6 @@
     background-color: #E6E6E6;
 }
 
-/* Zurück zur Übersicht Button */
-
 b{
 	font-family: 'Lato';
 	font-style: normal;
@@ -25,12 +23,13 @@ h1{
 	line-height: 161.5%;
 	/* or 39px */
 
-	color: #948357;
-
-	
+	color: #948357;	
 }
+
+/* Zurück zur Übersicht Button */
 .button {
     text-align: center;
+    width: 270px;
     font-size: 20px;
     font-weight: 400;
     font-family: 'Lato', sans-serif;
@@ -41,13 +40,40 @@ h1{
     display: inline-block;
 }
 
+.uebersicht-btn {
+    width: 25%;
+    float: left;
+    position: absolute;
+    margin-top: 1em;
+}
+
+/* Seitliche Übersichtsleiste */
+.uebersichtsleiste {
+    display: flex;
+    position: absolute;
+    float: left;
+    background-color: #449BB4B2;
+    width: 15%;
+    height: 65%;
+    margin-left: 6em;
+    margin-top: 10em;
+    border-radius: 15px;
+}
+
+/* Kommentarfeld in der seiltichen Übersichtsleiste */
+.kommentarfeld {
+    margin-right: 5em;
+    margin-top: 45em;
+    margin-bottom: 2em;
+    width: 230px;
+}
+
 h1.einfuehrung{
 	color: #948357;
 	font-weight: 400;
 }
 
-div.container
-{
+div.container{
 	position: absolute;
 	width: 1567px;
 	height: 842px;
@@ -61,15 +87,16 @@ div.container
 
 /* Die Modulinhalte in einem div */
 .modulinhalte {
-    margin-left: 45em;
-    margin-right: 13em;
+    float: right;
+    width: 63%;
+    margin-right: 15em;
+    margin-top: 2em;
     font-family: 'Lato', sans-serif;
 }
 
 .modulinhalte h1 {
-    float: right;
     align-content: right;
-    margin-right: 3em;
+    margin-right: 0em;
 }
 
 .modulinhalte h2 {

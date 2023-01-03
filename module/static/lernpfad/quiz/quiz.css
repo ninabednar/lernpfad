@@ -1,0 +1,57 @@
+/* Styling der Quizseiten */
+.body {
+    background-color: #E6E6E6;
+}
+
+/* Überschrift */
+h1{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 161.5%;
+	/* or 39px */
+	color: #2F3333;
+	float: right;
+    align-content: right;
+    margin-right: 3em;
+}
+
+/* Die Quizinhalte in einem div */
+.quizinhalte {
+    margin-left: 45em;
+    margin-right: 13em;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Styling der Frage des Quizes */
+.frage {
+    margin-left: 1em;
+    margin-right: 3em;
+    font-size: 20px
+}
+
+/* Styling der Antwort Buttons */
+.antwortbtn {
+	text-align: left;
+	padding-left: 1em;
+    font-size: 20px;
+    font-weight: 400;
+    height: 40px;
+    width: 55em;
+    border-radius: 11px;
+}
+
+/* Nächste Frage Button */
+.btn-frage {
+    float: right;
+    margin-right: 3em;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    height: 40px;
+    width: 270px;
+    border-radius: 11px;
+	color: #E6E6E6;
+	border:0.1em solid white;
+}
