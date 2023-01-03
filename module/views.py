@@ -23,8 +23,12 @@ def einfuehrung(request, unterseite_id):
     
     return render(request, 'module/einfuehrung.html', {'modul': modul, 'unterseite' : unterseite})
 
-def quiz(request, modul_id, unterseite_id):
+def quiz(request, modul_id, frage_id, ):
     modul = models.Modul.objects.get(nummer=modul_id)
-    unterseite = models.Unterseite.objects.get(nummer=unterseite_id, modul = modul)
+    frage = models.Frage.objects.get(frage_id=frage_id, modul = modul)
+    antworten =  models.Antwort.objects.filter(frage=frage)
+    antwortliste = []
+    for antwort in antworten:
+        antwortliste.append(antwort)
     
-    return render(request, 'module/quiz.html', {'modul': modul, 'unterseite' : unterseite})
+    return render(request, 'module/quiz.html', {'modul': modul, 'frage' : frage, 'antwortliste': antwortliste})
