@@ -1,12 +1,13 @@
 {% extends "users/header.html" %}
 
 {% block content %}
-
+<!-- Willkommensüberschrift -->
 <h1 class="name">Willkommen Name!</h1>
+<!-- Container für die Rahmeneinstellungen -->
 <div class="rahmen">
-	    
+	<!-- Container für die allgemeinen Überschriftseinstellungen -->    
 	<div class="ueberschriften"> <br>
-
+        <!-- Container für Inhalt und aufklappbare Liste des ersten Moduls -->
 		<div class="ueberschrift">
 			<h3>Modul 1</h3>
 			<h2>Allgemeine Informationen</h2>
@@ -17,7 +18,7 @@
 				<p>Quiz</p>
 			</div>
 		</div>
-		
+		<!-- Container für Inhalt und aufklappbare Liste des zweiten Moduls -->
 		<div class="ueberschrift">
 			<h3>Modul 2</h3>
 			<h2>Arten der Spende</h2>
@@ -30,7 +31,7 @@
 				<p>Organverteilung</p>
 			</div>
 		</div>
-		
+		<!-- Container für Inhalt und aufklappbare Liste des dritten Moduls -->
 		<div class="ueberschrift">
 			<h3>Modul 3</h3>
 			<h2>Warteliste</h2>
@@ -43,7 +44,7 @@
 			</div>
 			
 		</div>
-		
+		<!-- Container für Inhalt und aufklappbare Liste des vierten Moduls -->
 		<div class="ueberschrift">
 			<h3>Modul 4</h3> 	
 			<h2>Komplikationen</h2>
@@ -54,7 +55,7 @@
 				<p>Quiz</p>
 			</div>
 		</div>
-		
+		<!-- Container für Inhalt und aufklappbare Liste des fünften Moduls -->
 		<div class="ueberschrift">
 			<h3>Modul 5</h3>
 			<h2>Abschluss</h2>
@@ -68,13 +69,13 @@
 	</div>
 	<br>
 </div>
-
+<!-- Container für Einstellungen der Fortschrittsleiste -->
 <div class="progressleiste"> 
     <div class="progress" style="width: 90%;">
         <div class="currentprogress"style="width: 30%"></div>
     </div>
 </div>
-
+<!-- Skript für die Funktionalität der Listen -->
 <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
