@@ -15,6 +15,11 @@ class Unterseite(models.Model):
     nummer = models.IntegerField(default=0)
     naechste = models.IntegerField(default=-1)
     inhalt = models.TextField(max_length=2000)
+    
+    bild = models.CharField(max_length=100, default=0)
+    bild_beschreibung = models.CharField(max_length=200, default='')
+    bild_quelle = models.CharField(max_length=200, default='')
+    
     class Meta:
         verbose_name_plural = "Unterseiten"
     def __str__(self):
