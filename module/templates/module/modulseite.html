@@ -19,10 +19,10 @@ dass es auf die Übersichtsseite leitet {% endcomment %}
     <br>
     <h2>{{ unterseite.titel }}</h2>
     <br>   
-    <img src="{% static 'lernpfad/bild_plastik_niere.jpg' %}" alt="Bild einer Plastik Niere" width="500">
+	<img src="{% static 'lernpfad/modulseite/'|add:unterseite.bild %}" alt="{{unterseite.bild_beschreibung}}" width="500">
     <br>
     <br>
-    <p>Quelle Bild</p>
+    <p>Quelle: {{ unterseite.bild_quelle }}</p>
     <br>
     <br>
     <p class="lerntext">{{ unterseite.inhalt |safe }}</p>
