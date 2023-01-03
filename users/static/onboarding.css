@@ -1,0 +1,22 @@
+body{
+	background-color: #FAF5F6;
+}
+h1 {
+	font-size: 8em;
+	color: #BAA874;
+}
+
+h2 {
+	font-size: 5em;
+}
+
+p{
+	font-size: 2em;
+}
+.container{
+}
+
+.btn{
+	background-color: #BAA874;
+	color: white;
+}

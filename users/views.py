@@ -43,6 +43,6 @@ class ProfileView(UpdateView):
     def get_object(self):
         return self.request.user
         
-def index(request):
-    return render(request, 'users.index.html')
+def onboarding(request):
+    return render(request, 'onboarding.html')
   
