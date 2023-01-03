@@ -1,0 +1,21 @@
+.body {
+	background: #EAEAE6;
+}
+
+h1.einfuehrung{
+	color: #948357;
+	font-weight: 400;
+}
+
+div.container
+{
+	position: absolute;
+	width: 1567px;
+	height: 842px;
+	left: 55px;
+	top: 144px;
+
+	
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 35px;
+}
