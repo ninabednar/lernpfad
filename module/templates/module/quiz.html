@@ -1,0 +1,52 @@
+{% extends "module/header.html" %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'lernpfad/quiz/quiz.css' %}">
+
+{% block content %}
+<body class="body">
+
+<div>
+<br>
+{% comment %} Button führt einen eine Seite zurück, müsste noch angepasst werden, 
+dass es auf die Übersichtsseite leitet {% endcomment %}
+    <button class="button" onclick="history.go(-1)"> <- Zurück zur Übersicht</button>
+</div>
+
+{% comment %} Container für seitliche Sicht der Übersichtsleiste, Quiz {% endcomment %}
+<div class="uebersichtsleiste-quiz">
+    <p>Allgemeine Infos</p>
+    <br>
+    <br>
+    <textarea class="kommentarfeld-quiz" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+</div>
+
+<br>
+<div class="quizinhalte">
+    {% comment %} <h1> {{frage.name}}</h1> {% endcomment %}
+    <h1>1. Modulquiz</h1>
+    <br>
+    <br>
+    <br>
+    {% comment %} <h2>{{ frage.titel }}</h2> {% endcomment %}
+    <h2>Frage 1:</h2>
+    <br>   
+    <br>
+    {% comment %} <p class="Frage">{{ fragen.inhalt |safe }}</p> {% endcomment %}
+    <p class="frage">Hier steht die Frage</p>
+    <br>
+    <br>
+    <button class="antwortbtn">Richtig</button>
+    <br>
+    <br>
+    <button class="antwortbtn">Falsch</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="btn-frage" onclick="">Nächste Frage -></button>
+    {% comment %} <a class="btn btn-primary" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Frage -></a> {% endcomment %}
+</div>
+</body>
+
+{% endblock content %}
