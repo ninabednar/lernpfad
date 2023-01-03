@@ -94,3 +94,51 @@ h2 {
 	border-radius:4%;
 }
 
+.seitenende {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	size: 50em;
+	text-align: center;
+	margin-bottom: 5em
+}
+
+.start{
+	background-color: #4EBBDA;
+	color: #FFFFFF;
+	font-weight: bold;
+	cursor: pointer;
+	border:black;
+	text-align: center;
+	outline:black ;
+	font-size: 20px;
+	padding: 1em;
+	width: 20%;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         3px 3px 5px 6px #ccc;
+	border-radius:4%;
+}
+.bottomleft{
+	left: 5em;
+	position: fixed;
+	bottom: 0;
+	width: 10%;
+	size: 50em;
+	text-align: left;
+	margin-bottom: 5em
+}
+.hilfe{
+	color: #4EBBDA;
+	width: 70px;
+	height: 70px;
+	padding: 13px 18px;
+	border-radius: 60px;
+	text-align:center;
+	background-color:#FFFFFF;
+	font-size: xx-large;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         3px 3px 5px 6px #ccc;
+}
