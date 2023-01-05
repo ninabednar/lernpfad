@@ -8,6 +8,7 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse
 
+from . import models
 from .models import Account
 from .forms import RegistrationForm
 
@@ -43,11 +44,11 @@ class ProfileView(UpdateView):
     def get_object(self):
         return self.request.user
         
-def onboarding(request, id, titel, text, has_form):
-    unterseiten_id = models.Onboarding.objects.get(id = id)
-    titel = models.Onboarding.objects.get(titel = titel)
-    inhalt = models.Onboarding.objects.get(text = text)
-    has_form = models.Onboarding.objects.get(has_form = has_form)
+def onboarding(request, ident, titel=None, text=None, has_form=None):
+    unterseiten_id = models.Onboarding.objects.get(seiten_id = ident)
+    titel = models.Onboarding.objects.filter(seiten_titel = titel)
+    text = models.Onboarding.objects.filter(inhalt = text)
+    has_form = models.Onboarding.objects.filter(has_form = has_form)
     
-    return render(request, 'onboarding.html', {'unterseiten_id' : unterseiten_id, 'titel': titel, 'inhalt' : inhalt, 'has_form' : has_form})
+    return render(request, 'onboarding.html', {'unterseiten_id' : unterseiten_id, 'titel': titel, 'text' : text, 'has_form' : has_form})
   

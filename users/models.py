@@ -98,9 +98,9 @@ class Account(AbstractBaseUser, PermissionsMixin):
     #    return self.name.split()[0]
         
 class Onboarding(models.Model):
-    id = models.IntegerField(default=-1, primary_key=True)
-    titel = models.CharField(max_length=150, default='')
-    text = models.TextField(max_length=1000, default='')
+    seiten_id = models.IntegerField(default=-1)
+    seiten_titel = models.CharField(max_length=150, default='')
+    inhalt = models.TextField(max_length=1000, default='')
     
     has_form = models.BooleanField(default=False)
     
@@ -108,4 +108,4 @@ class Onboarding(models.Model):
             verbose_name_plural = "Onboarding"
     
     def __str__(self):
-        return str(self.id) + ' - ' + str(self.titel)
+        return str(self.seiten_id) + ' - ' + str(self.seiten_titel)

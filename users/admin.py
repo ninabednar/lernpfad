@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
-from .models import Account, QuizAnswer, Notizen
+from .models import Account, QuizAnswer, Notizen, Onboarding
 from .forms import UserCreationForm, UserChangeForm
 
 
@@ -32,7 +32,7 @@ class AccountAdmin(BaseUserAdmin):
     
     readonly_fields = ('get_quiz_answers',)
 
-
+admin.site.register(Onboarding)
 admin.site.register(Account, AccountAdmin)
 admin.site.register(QuizAnswer)
 admin.site.register(Notizen)
