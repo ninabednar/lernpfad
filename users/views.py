@@ -43,6 +43,11 @@ class ProfileView(UpdateView):
     def get_object(self):
         return self.request.user
         
-def onboarding(request):
-    return render(request, 'onboarding.html')
+def onboarding(request, id, titel, text, has_form):
+    unterseiten_id = models.Onboarding.objects.get(id = id)
+    titel = models.Onboarding.objects.get(titel = titel)
+    inhalt = models.Onboarding.objects.get(text = text)
+    has_form = models.Onboarding.objects.get(has_form = has_form)
+    
+    return render(request, 'onboarding.html', {'unterseiten_id' : unterseiten_id, 'titel': titel, 'inhalt' : inhalt, 'has_form' : has_form})
   

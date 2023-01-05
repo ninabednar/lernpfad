@@ -97,4 +97,15 @@ class Account(AbstractBaseUser, PermissionsMixin):
     #def get_short_name(self):
     #    return self.name.split()[0]
         
-
+class Onboarding(models.Model):
+    id = models.IntegerField(default=-1, primary_key=True)
+    titel = models.CharField(max_length=150, default='')
+    text = models.TextField(max_length=1000, default='')
+    
+    has_form = models.BooleanField(default=False)
+    
+    class Meta:
+            verbose_name_plural = "Onboarding"
+    
+    def __str__(self):
+        return str(self.id) + ' - ' + str(self.titel)
