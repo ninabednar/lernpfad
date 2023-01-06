@@ -1,40 +1,63 @@
+.logo{
+	height: 4em;
+	margin-top: 2em;
+	margin-left: 2em;
+}
+
 body{
 	background-color: #FAF5F6;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
 }
 
 .container{
 	max-width: 100%;
+	min-height: 100%;
+	
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	padding-left: 0em;
+	padding-top: 5em;
 }
 
 .text{
 	display: flex;
 	flex-direction:column;
-	
+	margin-right: 10em;
+	padding-left:5em;
+
 }
 
 h1 {
-	padding-top: 2em;
-	font-size: 8em;
+	padding-top: 1em;
+	font-size: 6em;
 	color: #BAA874;
+	text-align: right;
 }
 
 h2 {
-	font-size: 5em;
+	font-size: 3em;
 	text-align: right;
 }
 
 p{
 	font-size: 2em;
-	padding-top: 3em;
+	padding-top: 2em;
+	line-height: 2;
+	text-align: justify;
+	padding-left: 7em;
+	
 }
 
 .btn{
 	background-color: #BAA874;
 	color: white;
 	max-width: 10em;
-	text-align: center;
 	font-size: 3em;
+	margin-left: 8em;
+	margin-top: 1em;
+	
+	border-radius: 0.5em;
 }

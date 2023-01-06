@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
   	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -18,20 +17,61 @@
 
 <body>
 <div class="header">
-	<img src="{% static 'lernpfad/ukt_logo.png' %}" alt="Logo des Universitätsklinikums Tübingen">
+	<img src="{% static 'lernpfad/ukt_logo.png' %}" class="logo" alt="Logo des Universitätsklinikums Tübingen">
 </div>
 
 
 {% load static %}
 
 {% block content %}
+
 <div class="container">
-	<img src="{% static 'onboarding_1.jpg' %}" alt="grafik" width="105%">
+	<img src="{% static 'onboarding_1.jpg' %}" alt="grafik" width="50%">
 	<div class="text">
-	<h1>Digitaler Lernpfad</h1>
+		
+	{% if seite.seiten_id == 0 %}	
+		<h1>Digitaler Lernpfad</h1>
+	{% endif %}
+	
 	<h2>{{ seite.seiten_titel }}</h2>
 	<p>{{seite.inhalt}} </p>
-	<button class="btn" onclick="">Los gehts -></button>
+	
+	{% if seite.seiten_id == 0 %}
+		<a class="btn" role="button" href="/users/onboarding/1/">Los geht's →</a>
+	{% endif %}
+	
+	{% if seite.seiten_id == 1 %}
+		<a class="btn" role="button" href="/users/onboarding/2/">Registrieren</a>
+		<a class="btn" role="button" href="/users/onboarding/4/">Einloggen</a>
+		<a href="/module/">Weiter ohne Registrierung</a>
+	{% endif %}
+	
+	{% if seite.seiten_id == 2 %}
+	<form>
+		<input id="vorname" type="text" name="vorname_field" placeholder="Vorname"/>
+		<input id="nachname" type="text" name="nachname_field" placeholder="Nachname"/>
+		<br>
+		<input id="geburtstag" type="date" name="geburtstag" placeholder="01/01/1900"/>
+		<br>
+		<input id="email" type="email" name="email" placeholder="test@example.com"/>
+		<br>
+		<input type="submit" value="Anmeldedaten erhalten">
+	</form>
+	{% endif %}
+	
+	{% if seite.seiten_id == 3%}
+		<a class="btn" role="button" href="/users/onboarding/4/">Einloggen</a>
+	{% endif %}
+	
+	{% if seite.seiten_id == 4%}
+		<form>
+			<input id="email" type="email" name="email" placeholder="Emailadresse"/>
+			<br>
+			<input id="password" type="password" name="password" placeholder="Passwort"/>
+			<br>
+			<input type="submit" value="Anmeldedaten erhalten">
+		</form>
+	{% endif %}
 </div>
 </div>
 {% endblock content %}
