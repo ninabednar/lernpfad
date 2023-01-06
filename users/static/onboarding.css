@@ -4,6 +4,13 @@
 	margin-left: 2em;
 }
 
+.background{
+	/*min-height: 100vh;
+	max-height: 100vh;*/
+	vertical-align: bottom;
+	/*max-width: 60%;*/
+}
+
 body{
 	background-color: #FAF5F6;
 	margin: 0;
@@ -13,26 +20,31 @@ body{
 
 .container{
 	max-width: 100%;
-	min-height: 100%;
+	min-height: 100vh;
 	
 	position: relative;
 	display: flex;
 	flex-direction: row;
 	padding-left: 0em;
-	padding-top: 5em;
+	padding-bottom: 0em;
+	margin-top: 2%;
+	padding-bottom: 0%;
 }
 
 .text{
+	max-height: 100%;
+	min-width: 30%;
+	max-width: 40%;
+	margin-right: 5em;
 	display: flex;
 	flex-direction:column;
-	margin-right: 10em;
 	padding-left:5em;
-
+	margin-bottom: 10em;
 }
 
 h1 {
 	padding-top: 1em;
-	font-size: 6em;
+	font-size: 5.7em;
 	color: #BAA874;
 	text-align: right;
 }
@@ -51,13 +63,44 @@ p{
 	
 }
 
+form {
+	padding-left: 25%;
+}
+
+input{
+	margin-bottom: 1em;
+	background-color: #DFDCE0;
+	text-color: #565656;
+	font-size: 2em;
+}
+
+input[type=text]{
+	display: inline;
+}
+
+input[type=email]{
+	
+}
+
+.registrieren{
+	background-color: #565656;
+	
+}
 .btn{
-	background-color: #BAA874;
 	color: white;
-	max-width: 10em;
 	font-size: 3em;
 	margin-left: 8em;
 	margin-top: 1em;
-	
+	background-color: #BAA874;
 	border-radius: 0.5em;
+}
+
+
+.skip{
+	text-align: right;
+	padding-right: 11.5em;
+	text-color: #565656;
+}
+.einloggen{
+	
 }
