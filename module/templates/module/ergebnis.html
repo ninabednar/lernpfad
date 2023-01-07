@@ -10,7 +10,7 @@
 <br>
 {% comment %} Button führt einen eine Seite zurück, müsste noch angepasst werden, 
 dass es auf die Übersichtsseite leitet {% endcomment %}
-    <button class="button" onclick="history.go(-1)"> <- Zurück zur Übersicht</button>
+    <button class="button" onclick="window.location.href = '/';"> <- Zurück zur Übersicht</button>
 </div>
 
 {% comment %} Container für seitliche Sicht der Übersichtsleiste, Quiz {% endcomment %}
@@ -41,7 +41,9 @@ dass es auf die Übersichtsseite leitet {% endcomment %}
     <br>
     <br>
 	{% endfor %}
-    
+    {% comment %} <img src="{% static 'lernpfad/modulseite/'|add:unterseite.bild %}" alt="{{unterseite.bild_beschreibung}}" width="200"> {% endcomment %}
+    <p class="antwort"> Antwort Text</p>
+
     <button class="btn-frage" onclick="">Nächste Frage -></button>
     {% comment %} <a class="btn btn-primary" role="button" href="/module/{{modul.nummer}}/{{unterseite.naechste}}">Nächste Frage -></a> {% endcomment %}
 </div>
