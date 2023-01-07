@@ -35,7 +35,7 @@ class RegistrationView(CreateView):
 
 class ProfileView(UpdateView):
     model = Account
-    fields = ['name', 'phone', 'date_of_birth', 'picture']
+    fields = ['nachname', 'vorname', 'telefonnummer', 'geburtsdatum', 'profilbild']
     template_name = 'registration/profile.html'
 
     def get_success_url(self):

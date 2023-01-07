@@ -11,8 +11,8 @@ class AccountManager(BaseUserManager):
     #https://dev.to/joshwizzy/customizing-django-authentication-using-abstractbaseuser-llg
     use_in_migrations = True
 
-    def _create_user(self, email, nachname, vorname, phone, password, **extra_fields):
-        values = [email, nachname, vorname, phone]
+    def _create_user(self, email, nachname, vorname, telefonnummer, password, **extra_fields):
+        values = [email, nachname, vorname, telefonnummer]
         field_value_map = dict(zip(self.model.REQUIRED_FIELDS, values))
         for field_name, value in field_value_map.items():
             if not value:
@@ -23,7 +23,7 @@ class AccountManager(BaseUserManager):
             email=email,
             nachname=nachname,
             vorname=vorname,
-            phone=phone,
+            telefonnummer=telefonnummer,
             **extra_fields
         )
         user.set_password(password)
@@ -66,9 +66,9 @@ class Account(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     nachname = models.CharField(max_length=150)
     vorname = models.CharField(max_length=150)
-    phone = models.CharField(max_length=50, blank= True, default=0)
-    date_of_birth = models.DateField(blank=True, null=True)
-    picture = models.ImageField(blank=True, null=True)
+    telefonnummer = models.CharField(max_length=50, blank= True, default=0)
+    geburtsdatum = models.DateField(blank=True, null=True)
+    profilbild = models.ImageField(blank=True, null=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)

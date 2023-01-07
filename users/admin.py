@@ -10,23 +10,23 @@ class AccountAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('email', 'nachname', 'vorname', 'phone', 'date_of_birth', 'is_staff',  'is_superuser', 'get_quiz_answers')
+    list_display = ('email', 'nachname', 'vorname', 'telefonnummer', 'geburtsdatum', 'is_staff',  'is_superuser', 'get_quiz_answers')
     list_filter = ('is_superuser',)
 
     fieldsets = (
-        ('Info', {'fields': ('nachname', 'vorname', 'date_of_birth', 'get_quiz_answers', 'picture')}),
+        ('Info', {'fields': ('nachname', 'vorname', 'geburtsdatum', 'get_quiz_answers', 'profilbild')}),
         (None, {'fields': ('email', 'password')}),
         ('Groups', {'fields': ('groups',)}),
         
     )
     add_fieldsets = (
         (None, {'fields': ('email', 'is_staff', 'is_superuser', 'password1', 'password2')}),
-        ('Personal info', {'fields': ('nachname', 'vorname', 'phone', 'date_of_birth', 'picture')}),
+        ('Personal info', {'fields': ('nachname', 'vorname', 'telefonnummer', 'geburtsdatum', 'profilbild')}),
         ('Groups', {'fields': ('groups',)}),
         ('Permissions', {'fields': ('user_permissions',)}),
     )
 
-    search_fields = ('email', 'nachname', 'phone')
+    search_fields = ('email', 'nachname', 'telefonnummer', 'geburtsdatum')
     ordering = ('email',)
     filter_horizontal = ()
     
