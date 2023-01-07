@@ -1,0 +1,130 @@
+.logo{
+	/*Höhe des UKT Logos*/
+	height: 4em;
+	/*Freiraum nach oben*/
+	margin-top: 2em;
+	/*Freiraum nach links*/
+	margin-left: 2em;
+}
+
+.background{
+	/*Bild ist unten verankert*/
+	vertical-align: bottom;
+}
+
+body{
+	background-color: #FAF5F6;
+	/*Keine Ränder um den Inhalt herum*/
+	margin: 0;
+	padding: 0;
+	/*Body der HTML muss gesamte Höhe des Fensters einnehmen*/
+	min-height: 100vh;
+	
+	/*Scrollleiste ausblenden*/
+	overflow:hidden;
+}
+
+.container{
+	max-width: 100%;
+	min-height: 100vh;
+	
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	padding-left: 0em;
+	padding-bottom: 0em;
+	margin-top: 2%;
+	padding-bottom: 0%;
+}
+
+.text{
+	max-height: 100%;
+	min-width: 30%;
+	max-width: 40%;
+	margin-right: 5em;
+	display: flex;
+	flex-direction:column;
+	padding-left:5em;
+	margin-bottom: 10em;
+}
+
+h1 {
+	/*Abstand nach oben*/
+	padding-top: 1em;
+	/*Schriftgröße*/
+	font-size: 5.7em;
+	color: #BAA874;
+	/*Rechtsbündiger Text*/
+	text-align: right;
+}
+
+h2 {
+	font-size: 3em;
+	text-align: right;
+}
+
+p{
+	font-size: 2em;
+	padding-top: 2em;
+	/*Zeilenabstand*/
+	line-height: 2;
+	/*Blocksatz*/
+	text-align: justify;
+	
+}
+
+form {
+	/*Nach links 25% Abstand von der gesamtverfügbaren Breite des Formulars*/
+	padding-left: 25%;
+}
+
+input{
+	/*Rand nach unten*/
+	margin-bottom: 1em;
+	background-color: #DFDCE0;
+	text-color: #565656;
+	/*Schriftgröße*/
+	font-size: 2em;
+	/*Ecken abgerundet*/
+	border-radius: 0.5em;
+	/*Abstand nach links*/
+	padding-left: 1em;
+}
+
+input[type=text]{
+	/*Textformulare sollen in einer Reihe angezeigt werden*/
+	display: inline;
+}
+
+input[type=email]{
+	
+}
+
+.registrieren{
+	background-color: #565656;
+	
+}
+.btn{
+	color: white;
+	/*Schriftgröße*/
+	font-size: 3em;
+	/*Rand nach links*/
+	margin-left: 8em;
+	/*Rand nach oben*/
+	margin-top: 1em;
+	background-color: #BAA874;
+	/*Ecken abgerundet*/
+	border-radius: 0.5em;
+}
+
+
+.skip{
+	/*Text rechtsbündig*/
+	text-align: right;
+	/*Abstand nach rechts*/
+	padding-right: 11.5em;
+	text-color: #565656;
+}
+.einloggen{
+	
+}
