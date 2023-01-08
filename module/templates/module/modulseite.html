@@ -15,10 +15,16 @@ dass es auf die Übersichtsseite leitet {% endcomment %}
 
 {% comment %} Container für seitliche Sicht der Übersichtsleiste {% endcomment %}
 <div class="uebersichtsleiste">
-    <p>Allgemeine Infos</p>
+    <div class="modul-ueberschriften">
+        <button type="button" class="btn unlocked uebersichtsleiste"></button>
+        <h2>Allgemeine Informationen</h2>
+        <br>
+        <h2>Arten der Spende</h2>
+        <button class="round-btn"></button>
+    </div>
     <br>
     <br>
-    <textarea class="kommentarfeld" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+    {% comment %} <textarea class="kommentarfeld" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea> {% endcomment %}
 </div>
 
 {% comment %} Modulinhalte {% endcomment %}
