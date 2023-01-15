@@ -60,14 +60,22 @@ h1{
     border-radius: 15px;
 }
 .modul-ueberschriften {
+    white-space: nowrap;
     text-align:right;
 	font-size: 20pt;
     position: relative;
 }
 
 .modul-ueberschriften h2 {
+    text-align: right;
     position: absolute;
     margin-top: 1em;
+    margin-left: 2em;
+    font-size: 15px;
+}
+
+.AlgemeineInformationen {
+    
 }
 
 .round-btn {
