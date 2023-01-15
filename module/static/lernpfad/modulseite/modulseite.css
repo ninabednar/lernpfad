@@ -59,6 +59,36 @@ h1{
     margin-top: 10em;
     border-radius: 15px;
 }
+.modul-ueberschriften {
+    text-align:right;
+	font-size: 20pt;
+    position: relative;
+}
+
+.modul-ueberschriften h2 {
+    position: absolute;
+    margin-top: 1em;
+}
+
+.round-btn {
+    border-radius: 50%;
+}
+
+.btn.unlocked.uebersichtsleiste {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+
+/* Freigeschaltete Module */
+/* .btn-circle.btn-xl.unlocked.uebersichtsleiste {
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+	border-color: #FFFFFF;
+	text-align: center;
+	background-color:#7CB7C9;
+} */
 
 /* Kommentarfeld in der seiltichen Übersichtsleiste */
 .kommentarfeld {
