@@ -99,32 +99,42 @@ input[type=text]{
 input[type=email]{
 	
 }
+#nav-bar{
+	position: relative;
+	display: flex;
+}
+  
+.nav-link{
+	padding: 0.5em;
+}
 
-.registrieren{
-	background-color: #565656;
-	
+.maincolor{
+	background-color: #BAA874;
+}
+
+.secondarycolor{
+	background-color: #696969;
 }
 .btn{
 	color: white;
 	/*Schriftgröße*/
 	font-size: 3em;
 	/*Rand nach links*/
-	margin-left: 8em;
+	margin-left: 4em;
 	/*Rand nach oben*/
 	margin-top: 1em;
-	background-color: #BAA874;
 	/*Ecken abgerundet*/
 	border-radius: 0.5em;
 }
 
-
 .skip{
-	/*Text rechtsbündig*/
-	text-align: right;
+	/*Rand nach links*/
+	margin-left: 13em;
+	/*Rand nach oben*/
+	margin-top: 5em;
+	/*Text mittig*/
+	text-align: center;
 	/*Abstand nach rechts*/
 	padding-right: 11.5em;
-	text-color: #565656;
-}
-.einloggen{
-	
+	color: #565656;
 }

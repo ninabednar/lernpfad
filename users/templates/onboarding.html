@@ -51,13 +51,14 @@
 			<p>{{ seite.inhalt }} </p>
 	
 			{% if seite.seiten_id == 0 %}
-				<a class="btn" role="button" href="/users/onboarding/1/">Los geht's →</a>
+				<a class="btn maincolor" role="button" href="/users/onboarding/1/">Los geht's →</a>
 			{% endif %}
 	
 			{% if seite.seiten_id == 1 %}
-				<a class="btn" role="button" href="/users/onboarding/2/" class ="registrieren">Registrieren</a></li>
-				<a class="btn" role="button" href="/users/onboarding/5/" class="einloggen">Einloggen</a></li>
-	
+			<nav id="nav-bar">
+				<a class="btn secondarycolor nav-link" role="button" href="/users/onboarding/2/">Registrieren</a></li>
+				<a class="btn maincolor nav-link" role="button" href="/users/onboarding/5/">Einloggen</a></li>
+			</nav>
 				<a href="/module/" class="skip" href="/users/onboarding/4/">Weiter ohne Registrierung</a>
 			{% endif %}
 	
@@ -75,12 +76,12 @@
 			{% endif %}
 	
 			{% if seite.seiten_id == 3%}
-				<a class="btn" role="button" href="/users/onboarding/5/">Einloggen</a>
+				<a class="btn maincolor" role="button" href="/users/onboarding/5/">Einloggen</a>
 			{% endif %}
 	
 			{% if seite.seiten_id == 4%}
-				<a class="btn" role="button" href="/users/onboarding/2/">Registrieren</a>
-				<a class="btn" role="button" href="/module/">Zugang zum Gastkonto</a>
+				<a class="btn maincolor" role="button" href="/users/onboarding/2/">Registrieren</a>
+				<a class="btn secondarycolor" role="button" href="/module/">Zugang zum Gastkonto</a>
 			{% endif %}
 	
 			{% if seite.seiten_id == 5%}
